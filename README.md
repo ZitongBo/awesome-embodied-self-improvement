@@ -199,6 +199,14 @@ Rows = improvement target, columns = capability level; cells list representative
 
 Contributions welcome. Each new entry must: cite a primary source (arXiv / conference); be graded by this list's criterion with the "new executable unit (or none)" stated; and carry the secondary tags. See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
+## Maintainer
+
+Maintained by **Zitong Bo**.
+
+- Homepage: [zitongbo.github.io](https://zitongbo.github.io/)
+- RedNote (Xiaohongshu): [profile](https://www.xiaohongshu.com/user/profile/59dc1d56db2e601ae168a5bb)
+- Zhihu: [profile](https://www.zhihu.com/people/qian-chang-22-46/posts)
+
 ## License
 
 [MIT](./LICENSE). Papers in this list are the property of their respective authors.

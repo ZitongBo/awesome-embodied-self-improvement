@@ -199,6 +199,14 @@
 
 欢迎补充。每条新工作须：核到一手出处（arXiv / 会议）；按本清单判据标注级别并写明"新增的可执行单元（或无）"；附副轴标签。详见 [CONTRIBUTING.md](./CONTRIBUTING.md)。
 
+## 维护者
+
+由 **薄紫彤（Zitong Bo）** 维护。
+
+- 个人主页：[zitongbo.github.io](https://zitongbo.github.io/)
+- 小红书：[主页](https://www.xiaohongshu.com/user/profile/59dc1d56db2e601ae168a5bb)
+- 知乎：[主页](https://www.zhihu.com/people/qian-chang-22-46/posts)
+
 ## License
 
 [MIT](./LICENSE)。清单中论文版权归各自作者所有。
