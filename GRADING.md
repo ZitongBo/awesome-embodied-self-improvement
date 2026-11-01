@@ -75,7 +75,7 @@ Uses vision / tool errors / execution feedback to change the current prompt/plan
 
 ### L2 — Retained experience (persistent, executable action set unchanged)
 Improvement persists across episodes but adds no previously infeasible executable action — it changes memory content, text rules, routing, monitoring-only critics, re-ordering of existing primitives, or parameters/weights. Two sub-kinds:
-- **content-type** (memory / text skill / declarative policy): Harness VLA, EmbodiSkill, ABot-AgentOS, ME-Brain, SafeMem, BATON;
+- **content-type** (memory / text skill / declarative policy): Harness VLA, EmbodiSkill, ABot-AgentOS, ME-Brain, SafeMem, BATON, Spotter;
 - **weight-type** (changes policy/world-model weights but adds no nameable new executable action): Self-Improving EFM, RECAP, RoboCat, VLAW, MEDAL++, LiReN. These are tagged `weights`, but remain L2 because no new executable unit appears.
 
 > Boundary note: **ABot-AgentOS** is the most L3-like L2 — it has autonomous diagnosis and held-out gated promotion (strong secondary tags). But by the single criterion it changes a content pipeline and adds no executable action, so it is **L2**. This shows "has a gate" and "who diagnoses" are correctly demoted to secondary tags.

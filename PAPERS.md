@@ -27,6 +27,7 @@ Per-paper reading notes (one file per work) are in [`notes/`](./notes/README.md)
 | ME-Brain-1.0 | 2609.24271 | **L2** | none (hierarchical memory + skill abstraction) | episode-level | no | ✅ verified |
 | SafeMem | 2609.08444 | **L2** | none (long-term semantic graph + risk prediction) | risk threshold | no | ✅ verified |
 | BATON | 2608.16889 | **L2** | none (reusable subtask solutions in language memory) | invocation check | no | ✅ verified |
+| Spotter | 2609.36808 | **L2** (boundary) | none (fixed motion primitives; lessons are text) | learning episodes + review; frozen at test | no | ✅ full |
 | VLAW | 2602.12063 | **L2** | none (policy ↔ world-model co-improvement, weight-level) | real rollout | yes | ✅ verified |
 | Self-Improving EFM | 2509.15155 | **L2** | none (self-derived reward + success detection; weight-level) | self-reward | yes | ✅ verified |
 | RECAP (π*0.6) | 2511.14759 | **L2** | none (advantage-conditioned, updates VLA weights) | sparse reward + corrections | yes | ✅ verified |
@@ -63,7 +64,7 @@ Per-paper reading notes (one file per work) are in [`notes/`](./notes/README.md)
 ## Notes on the levels
 
 - **L1 (~9 works):** closed-loop correction / inference-time self-correction; resets to zero. Note that Intrinsic Robot Rewarding, AgentChord, CycleVLA, and EmbodiedSkills look sophisticated but do not persist improvement into a new action across episodes → L1.
-- **L2 (~13 works):** persistent improvement without a new executable action. Split into **content-type** (changes memory / text skills / declarative policy) and **weight-type** (changes weights but adds no nameable new executable action; tagged `weights`).
+- **L2 (~14 works):** persistent improvement without a new executable action. Split into **content-type** (changes memory / text skills / declarative policy) and **weight-type** (changes weights but adds no nameable new executable action; tagged `weights`).
 - **L3 (~17 works):** adds at least one previously infeasible executable unit (new skill / grasp synthesis / graph / predicate / harness program).
 - **L3→L4 nascent (5 works):** self-described as "toward RSI" but with no evidence of recursively improving the improvement mechanism itself.
 - **L4:** **PhysEvo** touches the physical lower bound (meta-agent improves/reuses its own diagnostic tools) but keeps a fixed meta-loop skeleton → weakest instance; Hyperagents is closest to full L4 but simulated; the Darwin Gödel Machine is a software-domain instance.
@@ -80,6 +81,9 @@ Frozen executor; Skill-Aware Reflection self-classifies trajectories into four t
 
 ### ABot-AgentOS · 2607.10350 → L2 (boundary)
 A failure-driven loop turns memory failures into **declarative JSON-DSL** evo-assets, promoted via split-wise held-out gating. States it does **not execute generated code**; only changes the content pipeline → L2. Shows "gate" and "who diagnoses" are secondary tags that cannot lift L2 to L3.
+
+### Spotter · 2609.36808 → L2 (boundary)
+Frozen VLA (π0.5 / Cosmos Policy) leads; a screener VLM checks each window of action chunks and a judge VLM repairs only confirmed errors with a fixed primitive set (e.g. move_to, nudge, rotate, lift, retreat, gripper close/open, then hand back), with no scene reset. In separate learning episodes (training seed, resets allowed) the judge drafts lessons; a review step promotes the general ones into a 77-lesson library that is frozen and retrieved at test time. Persistent across episodes but no new executable unit → L2. Boundary because the retained library is consolidated before deployment with a review step, not updated online; at test time the only change is in-episode repair (L1-like).
 
 ### ASPIRE · 2607.00272 → L3
 Coordinator-actor; diagnoses from per-primitive traces → synthesizes code repairs → distills **new reusable skills** into a library (e.g., Multi-Angle Approach); LIBERO-90 → LIBERO-Pro Long zero-shot 31% vs 4%.

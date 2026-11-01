@@ -14,7 +14,7 @@
 ![Verified](https://img.shields.io/badge/entries-arXiv%20verified-2ea44f?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey?style=flat-square)
 
-**45** 项具身自我改进工作（L1 · 8 ｜ L1–L2 · 1 ｜ L2 · 13 ｜ L3 · 17 ｜ L4 · 1 触及下沿 + 5 苗头）  ·  **3** 个 benchmark  ·  **4** 篇 survey  ·  2 项软件域对照
+**46** 项具身自我改进工作（L1 · 8 ｜ L1–L2 · 1 ｜ L2 · 14 ｜ L3 · 17 ｜ L4 · 1 触及下沿 + 5 苗头）  ·  **3** 个 benchmark  ·  **4** 篇 survey  ·  2 项软件域对照
 
 [判级口径](#判级口径一句话决策) · [按改进对象索引](#按改进对象索引正交视图) · [L1](#l1--episode-内反馈恢复改进-reset-后清零) · [L2](#l2--经验留存改进持久但可执行动作集合不变) · [L3](#l3--agent-主导的能力扩张新增一个之前做不出的可执行动作) · [L4](#l4--rsi改进产生改进的机制本身) · [Benchmarks](#-benchmarks--datasets) · [Surveys](#-surveys) · [判级方法论](./GRADING.md) · [逐篇详表](./PAPERS.md) · [贡献](./CONTRIBUTING.md)
 
@@ -65,7 +65,7 @@
 | 改进对象 | 它改的是什么 | 代表工作（级别） |
 |---|---|---|
 | **Model & Policy** | 策略/世界模型**权重**或决策规则 | Self-Improving EFM `L2` · RECAP (π*0.6) `L2` · RoboCat `L2` · VLAW `L2` · MEDAL++ `L2` · LiReN `L2` · SEES `L3` · RoboClaw `L3` |
-| **Memory & Knowledge** | 记忆内容 / 检索 / 巩固 | ABot-AgentOS `L2` · ME-Brain `L2` · SafeMem `L2` · BATON `L2` · Harness VLA 的记忆 `L2` |
+| **Memory & Knowledge** | 记忆内容 / 检索 / 巩固 | ABot-AgentOS `L2` · ME-Brain `L2` · SafeMem `L2` · BATON `L2` · Harness VLA 的记忆 `L2` · Spotter `L2` |
 | **Skills & Behaviors** | 可执行技能库（新增/复用/组合） | ASPIRE `L3` · RATs `L3` · RoboSkill `L3` · LRLL `L3` · Voyager `L3` · Skill-Space Shooting `L3` · EmbodiSkill（文本技能）`L2` |
 | **Harness & System** | 运行时中间件 / 工具 / 编排 / 路由 / 计算图 | Zetta `L3` · SHAPER `L3` · RoboHarness `L3` · GaP `L3` · RoboFoundry `L3` · HarnessPAI `L3` · AdaHVLA `L3` · CaP-X `L3` · ETA `L3` |
 | **Control Interface** | 动作 / 观察接口本身 | PhysEvo（关节级控制 + 观察工具）`L3`+`L4 下沿` |
@@ -80,7 +80,7 @@
 | 改进对象 \ 级别 | L1 | L2 | L3 | L3→L4（苗头） | L4（下沿） |
 |---|---|---|---|---|---|
 | **Model & Policy** | — | Self-Improving EFM, RECAP, RoboCat, VLAW, MEDAL++, LiReN | SEES, RoboClaw | — | — |
-| **Memory & Knowledge** | — | ABot-AgentOS, ME-Brain, SafeMem, BATON | — | — | — |
+| **Memory & Knowledge** | — | ABot-AgentOS, ME-Brain, SafeMem, BATON, Spotter | — | — | — |
 | **Skills & Behaviors** | — | EmbodiSkill, Harness VLA | ASPIRE, RATs, RoboSkill, LRLL, Voyager, Skill-Space Shooting | — | — |
 | **Harness & System** | EmbodiedSkills | — | Zetta, SHAPER, RoboHarness, GaP, RoboFoundry, HarnessPAI, AdaHVLA, CaP-X, ETA | ENPIRE, AgenticRobotics, RegenHarness, EmbodiedRSI, RPG | — |
 | **Control Interface / Observation** | Inner Monologue, DoReMi, COME-robot, CAPE, REFLECT, CycleVLA, AgentChord, Intrinsic Reward | — | PhysEvo | — | — |
@@ -102,6 +102,7 @@
 - **RPG** · `arXiv 2026-10` · `L3→L4 苗头` — 无权重更新自改，还改自己的 system prompt。 → [L4](#l4--rsi改进产生改进的机制本身)
 - **Skill-Space Shooting** · `arXiv 2026-09` · `L3` — 把纠正动作蒸馏成可复用短技能。 → [L3](#l3--agent-主导的能力扩张新增一个之前做不出的可执行动作)
 - **RoboSkill** · `arXiv 2026-09` · `L3` — Explore-Execute-Evolve 技能获取/复用循环。 → [L3](#l3--agent-主导的能力扩张新增一个之前做不出的可执行动作)
+- **Spotter** · `arXiv 2026-09` · `L2`（边界）— 冻结 VLA + 经审核、冻结的教训库；修复复用固定运动原语。 → [L2](#l2--经验留存改进持久但可执行动作集合不变)
 
 ---
 
@@ -136,6 +137,7 @@
 - **ME-Brain-1.0: Memory, Cognition and Action for Evolving Embodied Intelligence** · [arXiv:2609.24271](https://arxiv.org/abs/2609.24271) · `arXiv 2026` · `L2` `🤖real` — 经验获取 + 分层记忆巩固 + 技能抽象，不重训。
 - **SafeMem: Safe Task Planning with Long-Term Graph Memory** · [arXiv:2609.08444](https://arxiv.org/abs/2609.08444) · `CoRL 2026` · `L2` `🤖real` — 增量语义图记忆 + LLM 风险预测触发保守重规划。
 - **BATON: Long-Horizon Manipulation via Agentic Subtask Exploration & Transition-aware Memory** · [arXiv:2608.16889](https://arxiv.org/abs/2608.16889) · `arXiv 2026` · `L2` `🧪sim` — 冻结 VLA，把可复用子任务解存入语言记忆；无参数更新。
+- **Spotter: Let the Embodied Model Lead, and the VLM Reflect for It** · [arXiv:2609.36808](https://arxiv.org/abs/2609.36808) · `arXiv 2026` · `L2`（边界样本）`🤖real` `🧪sim` `🧊frozen` `📂open` — 冻结 VLA 主导执行，VLM 并行筛查，只在确认出错时用固定运动原语修复（不重置场景）；judge 在单独的学习回合里写教训草稿，经审核收成 77 条教训库，测试时冻结检索。不新增可执行动作。RoboCasa：π0.5 64.3→68.4，Cosmos Policy 67.9→71.7（本地 Qwen，无成功信号）。
 
 ### 权重型 L2（改权重，但不新增可点名的新可执行动作）
 

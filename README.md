@@ -14,7 +14,7 @@
 ![Verified](https://img.shields.io/badge/entries-arXiv%20verified-2ea44f?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey?style=flat-square)
 
-**45** embodied self-improvement works (L1 · 8 ｜ L1–L2 · 1 ｜ L2 · 13 ｜ L3 · 17 ｜ L4 · 1 at the lower bound + 5 nascent)  ·  **3** benchmarks  ·  **4** surveys  ·  2 software-domain references
+**46** embodied self-improvement works (L1 · 8 ｜ L1–L2 · 1 ｜ L2 · 14 ｜ L3 · 17 ｜ L4 · 1 at the lower bound + 5 nascent)  ·  **3** benchmarks  ·  **4** surveys  ·  2 software-domain references
 
 [Grading criterion](#grading-criterion-one-line-decision) · [Index by improvement target](#index-by-improvement-target-orthogonal-view) · [L1](#l1--in-episode-feedback-recovery-improvement-reset-to-zero) · [L2](#l2--retained-experience-persistent-but-the-executable-action-set-is-unchanged) · [L3](#l3--agent-driven-capability-expansion-a-new-previously-infeasible-executable-action) · [L4](#l4--rsi-improving-the-improvement-mechanism-itself) · [Benchmarks](#-benchmarks--datasets) · [Surveys](#-surveys) · [Grading methodology](./GRADING.md) · [Per-paper table](./PAPERS.md) · [Contributing](./CONTRIBUTING.md)
 
@@ -65,7 +65,7 @@ The main list is organized by **capability level L1–L4** ("how strong"). Many 
 | Improvement target | What it changes | Representative works (level) |
 |---|---|---|
 | **Model & Policy** | Policy / world-model **weights** or decision rules | Self-Improving EFM `L2` · RECAP (π*0.6) `L2` · RoboCat `L2` · VLAW `L2` · MEDAL++ `L2` · LiReN `L2` · SEES `L3` · RoboClaw `L3` |
-| **Memory & Knowledge** | Memory content / retrieval / consolidation | ABot-AgentOS `L2` · ME-Brain `L2` · SafeMem `L2` · BATON `L2` · Harness VLA's memory `L2` |
+| **Memory & Knowledge** | Memory content / retrieval / consolidation | ABot-AgentOS `L2` · ME-Brain `L2` · SafeMem `L2` · BATON `L2` · Harness VLA's memory `L2` · Spotter `L2` |
 | **Skills & Behaviors** | Executable skill library (add / reuse / compose) | ASPIRE `L3` · RATs `L3` · RoboSkill `L3` · LRLL `L3` · Voyager `L3` · Skill-Space Shooting `L3` · EmbodiSkill (text skills) `L2` |
 | **Harness & System** | Runtime middleware / tools / orchestration / routing / graph | Zetta `L3` · SHAPER `L3` · RoboHarness `L3` · GaP `L3` · RoboFoundry `L3` · HarnessPAI `L3` · AdaHVLA `L3` · CaP-X `L3` · ETA `L3` |
 | **Control Interface** | The action / observation interface itself | PhysEvo (joint-level control + observation tools) `L3`+`L4 lower bound` |
@@ -80,7 +80,7 @@ Rows = improvement target, columns = capability level; cells list representative
 | Target \ Level | L1 | L2 | L3 | L3→L4 (nascent) | L4 (lower bound) |
 |---|---|---|---|---|---|
 | **Model & Policy** | — | Self-Improving EFM, RECAP, RoboCat, VLAW, MEDAL++, LiReN | SEES, RoboClaw | — | — |
-| **Memory & Knowledge** | — | ABot-AgentOS, ME-Brain, SafeMem, BATON | — | — | — |
+| **Memory & Knowledge** | — | ABot-AgentOS, ME-Brain, SafeMem, BATON, Spotter | — | — | — |
 | **Skills & Behaviors** | — | EmbodiSkill, Harness VLA | ASPIRE, RATs, RoboSkill, LRLL, Voyager, Skill-Space Shooting | — | — |
 | **Harness & System** | EmbodiedSkills | — | Zetta, SHAPER, RoboHarness, GaP, RoboFoundry, HarnessPAI, AdaHVLA, CaP-X, ETA | ENPIRE, AgenticRobotics, RegenHarness, EmbodiedRSI, RPG | — |
 | **Control Interface / Observation** | Inner Monologue, DoReMi, COME-robot, CAPE, REFLECT, CycleVLA, AgentChord, Intrinsic Reward | — | PhysEvo | — | — |
@@ -102,6 +102,7 @@ Most recent entries by arXiv date (newest first):
 - **RPG** · `arXiv 2026-10` · `L3→L4 nascent` — weight-free self-improvement that also revises its own system prompt. → [L4](#l4--rsi-improving-the-improvement-mechanism-itself)
 - **Skill-Space Shooting** · `arXiv 2026-09` · `L3` — corrective actions distilled into reusable short skills. → [L3](#l3--agent-driven-capability-expansion-a-new-previously-infeasible-executable-action)
 - **RoboSkill** · `arXiv 2026-09` · `L3` — Explore-Execute-Evolve skill acquisition/reuse loop. → [L3](#l3--agent-driven-capability-expansion-a-new-previously-infeasible-executable-action)
+- **Spotter** · `arXiv 2026-09` · `L2` (boundary) — frozen VLA plus a reviewed, frozen lesson library; repairs reuse fixed motion primitives. → [L2](#l2--retained-experience-persistent-but-the-executable-action-set-is-unchanged)
 
 ---
 
@@ -136,6 +137,7 @@ Most recent entries by arXiv date (newest first):
 - **ME-Brain-1.0: Memory, Cognition and Action for Evolving Embodied Intelligence** · [arXiv:2609.24271](https://arxiv.org/abs/2609.24271) · `arXiv 2026` · `L2` `🤖real` — experience acquisition + hierarchical memory consolidation + skill abstraction without retraining.
 - **SafeMem: Safe Task Planning with Long-Term Graph Memory** · [arXiv:2609.08444](https://arxiv.org/abs/2609.08444) · `CoRL 2026` · `L2` `🤖real` — an incremental semantic-graph memory plus an LLM risk predictor that triggers conservative replanning.
 - **BATON: Long-Horizon Manipulation via Agentic Subtask Exploration & Transition-aware Memory** · [arXiv:2608.16889](https://arxiv.org/abs/2608.16889) · `arXiv 2026` · `L2` `🧪sim` — freezes the VLA and stores reusable subtask solutions in language memory; no parameter updates.
+- **Spotter: Let the Embodied Model Lead, and the VLM Reflect for It** · [arXiv:2609.36808](https://arxiv.org/abs/2609.36808) · `arXiv 2026` · `L2` (boundary case) `🤖real` `🧪sim` `🧊frozen` `📂open` — a frozen VLA leads while a VLM screens it in parallel and repairs only confirmed errors with a fixed set of motion primitives (no scene reset); lessons drafted by the judge in separate learning episodes are reviewed into a 77-lesson library, frozen and retrieved at test time. No new executable action. RoboCasa: π0.5 64.3→68.4, Cosmos Policy 67.9→71.7 with a local Qwen and no success signal.
 
 ### Weight-type L2 (changes weights, but adds no nameable new executable action)
 

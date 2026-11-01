@@ -38,10 +38,10 @@ All share the same mechanism class: feedback (vision / tool error / predicted fa
 
 ## L2 — retained experience (persistent, but the executable action set is unchanged)
 
-**Content-type (changes memory / text / declarative policy):** Harness VLA · EmbodiSkill · ABot-AgentOS · ABot-Claw · ME-Brain-1.0 · SafeMem · BATON.
+**Content-type (changes memory / text / declarative policy):** Harness VLA · EmbodiSkill · ABot-AgentOS · ABot-Claw · ME-Brain-1.0 · SafeMem · BATON · Spotter (boundary).
 **Weight-type (changes weights, adds no nameable new executable action):** Self-Improving EFM · RECAP (π*0.6) · RoboCat · VLAW · MEDAL++ · LiReN.
 
-— **13 works.** Each improves *how existing capability is used* (memory, routing, text rules, scheduling) or makes existing tasks more reliable via weight updates, without adding a nameable new executable action.
+— **14 works.** Each improves *how existing capability is used* (memory, routing, text rules, scheduling) or makes existing tasks more reliable via weight updates, without adding a nameable new executable action.
 
 - **ABot-AgentOS** is the key **boundary case**: real, persistent, failure-driven, *held-out gated* — yet it edits a **declarative JSON-DSL** interpreted by a **fixed executor** and *explicitly does not execute generated code*. Strict validation is a secondary tag; mechanism (no new executable unit) keeps it L2.
 - The six weight-type works touch weights (`⚙️`), which is a **secondary tag** — they improve known tasks, not the capability set, so they stay L2 rather than being pulled up.
